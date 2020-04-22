@@ -1,22 +1,5 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
 language: R
-sudo: false
 warnings_are_errors: false
-cache: packages;
-r_packages:
-  - covr
-after_success:
-  - Rscript -e 'covr::codecov()'
-before_deploy:
- - git config --local user.name "akimanabe"
- - git config --local user.email "amanabe@affrc.go.jp"
- - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
- - git tag $TRAVIS_TAG
-deploy:
-  provider: releases
-api_key: "GITHUB OAUTH TOKEN"
-file: "FILE TO UPLOAD"
-skip_cleanup: true
-on:
-  tags: true
+cache: packages
