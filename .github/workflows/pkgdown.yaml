@@ -8,7 +8,7 @@ jobs:
   pkgdown:
     runs-on: macOS-latest
     env:
-      GITHUB_PAT: ${{ PAT_fishgr }}
+      GITHUB_PAT: ${{ secrets.PAT_fishgr }}
     steps:
       - uses: actions/checkout@v2
 
