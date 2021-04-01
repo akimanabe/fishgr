@@ -14,3 +14,8 @@ LazyData: true
 Suggests: 
     covr,
     testthat
+Imports: 
+    dplyr,
+    broom,
+    tibble
+RoxygenNote: 7.1.1
