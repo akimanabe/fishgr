@@ -53,7 +53,8 @@ fit_ext_vb <-
 
     log_likeli <- function(ps) {
       dat %>%
-        dplyr::mutate(loglikeli = dnorm(Length, ext_vb(Age, ps = ps), log = TRUE),
+        dplyr::mutate(loglikeli = dnorm(Length, ext_vb(Age, ps = ps),
+                                        log = TRUE),
                       loglikeli = - loglikeli) %>%
         dplyr::pull(loglikeli) %>%
         sum()
