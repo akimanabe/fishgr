@@ -11,5 +11,5 @@
 #' vb(1, c(300, 0.6, 0))
 #' }
 vb <- function(age, ps) {
-  ps[1] * (1 - exp( - ps[2] * (age - ps[3])))
+  ps[1] * (1 - exp(- ps[2] * (age - ps[3])))
 }

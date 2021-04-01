@@ -14,9 +14,9 @@
 #' fit_vb(dat = foo, ps = c(200, 0.8, 0))
 #' }
 fit_vb <-
-  function(dat, ps){
+  function(dat, ps) {
 
-    log_likeli <- function(ps){
+    log_likeli <- function(ps) {
       dat %>%
         dplyr::mutate(loglikeli = dnorm(Length, vb(Age, ps = ps), log = TRUE),
                       loglikeli = - loglikeli) %>%
