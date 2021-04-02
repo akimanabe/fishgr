@@ -14,7 +14,7 @@
 #' fit_vb(dat = foo, ps = c(200, 0.8, 0))
 #' }
 fit_vb <-
-  function(dat, ps) {
+  function(dat, ps, setorigin = FALSE) {
 
     log_likeli <- function(ps) {
       dat %>%

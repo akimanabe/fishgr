@@ -9,6 +9,11 @@ test_that("function estimates Length at age", {
   expect_equal(length_1, 135.3565, tolerance = 0.0001)
 })
 
+test_that("setorigin set t_0 as 0", {
+  length_0 <- vb(age = 1, ps = c(300, 0.5), setorigin = TRUE)
+  expect_equal(length_0, 118.0408, tolerance = 0.0001)
+})
+
 context("extended vb")
 
 test_that("function exists", {
