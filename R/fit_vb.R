@@ -2,6 +2,7 @@
 #'
 #' @param dat tibble with column `c(Age, Length)`
 #' @param ps parameters in order of `c(L_inf, K, t_0)`
+#' @param setorigin constrain t_0 to 0 when TRUE
 #'
 #' @return tibble of estimated parameters
 #' @export
@@ -18,7 +19,11 @@ fit_vb <-
 
     log_likeli <- function(ps) {
       dat %>%
-        dplyr::mutate(loglikeli = dnorm(Length, vb(Age, ps = ps), log = TRUE),
+        dplyr::mutate(loglikeli = dnorm(Length,
+                                        vb(Age,
+                                           ps = ps,
+                                           setorigin = setorigin),
+                                        log = TRUE),
                       loglikeli = - loglikeli) %>%
         dplyr::pull(loglikeli) %>%
         sum()

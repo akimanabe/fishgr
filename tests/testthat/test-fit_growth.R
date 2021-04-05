@@ -15,6 +15,18 @@ test_that("function estimates parameters", {
             "data.frame")
 })
 
+test_that("function estimates parameters with t0 fixed as 0", {
+  bar <-
+    tibble::tibble(Age = seq(0, 5, 0.1),
+                   Length = vb(seq(0, 5, 0.1),
+                               ps = c(300, 0.6, -0.5)))
+  expect_equal(
+    fit_vb(bar, ps = c(300, 0.6), setorigin = TRUE) %>%
+      dplyr::pull(value),
+    c(278, 1.06), tolerance = 0.01
+  )
+})
+
 context("fit ext_vb")
 
 test_that("function exits", {

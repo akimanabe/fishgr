@@ -12,12 +12,12 @@
 #' vb(1, c(300, 0.6, 0), setorigin = FALSE)
 #' }
 vb <- function(age, ps, setorigin = FALSE) {
-  if(setorigin == FALSE){
+  if (setorigin == FALSE) {
     estim_length <-
       ps[1] * (1 - exp(- ps[2] * (age - ps[3])))
   }
 
-  if(setorigin == TRUE){
+  if (setorigin == TRUE) {
     estim_length <-
       ps[1] * (1 - exp(- ps[2] * (age - 0)))
   }

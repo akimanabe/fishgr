@@ -4,12 +4,14 @@
 \alias{fit_vb}
 \title{Fit vb via maximum likelihood method}
 \usage{
-fit_vb(dat, ps)
+fit_vb(dat, ps, setorigin = FALSE)
 }
 \arguments{
 \item{dat}{tibble with column `c(Age, Length)`}
 
 \item{ps}{parameters in order of `c(L_inf, K, t_0)`}
+
+\item{setorigin}{constrain t_0 to 0 when TRUE}
 }
 \value{
 tibble of estimated parameters
