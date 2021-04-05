@@ -83,7 +83,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fishgr</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9003</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9004</span>
       </span>
     </div>
 
@@ -117,7 +117,7 @@
     <p>Fit vb via maximum likelihood method</p>
     </div>
 
-    <pre class="usage"><span class='fu'>fit_vb</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>ps</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>fit_vb</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>ps</span>, setorigin <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,6 +129,10 @@
     <tr>
       <th>ps</th>
       <td><p>parameters in order of `c(L_inf, K, t_0)`</p></td>
+    </tr>
+    <tr>
+      <th>setorigin</th>
+      <td><p>constrain t_0 to 0 when TRUE</p></td>
     </tr>
     </table>
 
