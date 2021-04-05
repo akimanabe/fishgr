@@ -2,6 +2,7 @@
 #'
 #' @param dat tibble with column `c(Age, Length)`
 #' @param ps parameters in order of `c(L_inf, K, t_0)`
+#' @param setorigin constrain t_0 to 0 when TRUE
 #'
 #' @return tibble of estimated parameters
 #' @export
@@ -14,11 +15,15 @@
 #' fit_vb(dat = foo, ps = c(200, 0.8, 0))
 #' }
 fit_vb <-
-  function(dat, ps) {
+  function(dat, ps, setorigin = FALSE) {
 
     log_likeli <- function(ps) {
       dat %>%
-        dplyr::mutate(loglikeli = dnorm(Length, vb(Age, ps = ps), log = TRUE),
+        dplyr::mutate(loglikeli = dnorm(Length,
+                                        vb(Age,
+                                           ps = ps,
+                                           setorigin = setorigin),
+                                        log = TRUE),
                       loglikeli = - loglikeli) %>%
         dplyr::pull(loglikeli) %>%
         sum()
@@ -37,6 +42,7 @@ fit_vb <-
 #'
 #' @param dat tibble with column `c(Age, Length)`
 #' @param ps parameters in order of `c(L_inf, K_1, K_2, t_m, t_0)`
+#' @param setorigin constrain t_0 to 0 when TRUE
 #'
 #' @return tibble of estimated parameters
 #' @export
@@ -49,11 +55,12 @@ fit_vb <-
 #' fit_ext_vb(foo, ps = c(250, 0.5, 1, 2, 0))
 #' }
 fit_ext_vb <-
-  function(dat, ps) {
+  function(dat, ps, setorigin = FALSE) {
 
     log_likeli <- function(ps) {
       dat %>%
-        dplyr::mutate(loglikeli = dnorm(Length, ext_vb(Age, ps = ps),
+        dplyr::mutate(loglikeli = dnorm(Length, ext_vb(Age, ps = ps,
+                                                       setorigin = setorigin),
                                         log = TRUE),
                       loglikeli = - loglikeli) %>%
         dplyr::pull(loglikeli) %>%
