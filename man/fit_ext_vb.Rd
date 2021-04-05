@@ -4,12 +4,14 @@
 \alias{fit_ext_vb}
 \title{Fit vb via maximum likelihood method}
 \usage{
-fit_ext_vb(dat, ps)
+fit_ext_vb(dat, ps, setorigin = FALSE)
 }
 \arguments{
 \item{dat}{tibble with column `c(Age, Length)`}
 
 \item{ps}{parameters in order of `c(L_inf, K_1, K_2, t_m, t_0)`}
+
+\item{setorigin}{constrain t_0 to 0 when TRUE}
 }
 \value{
 tibble of estimated parameters
