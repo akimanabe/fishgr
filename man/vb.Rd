@@ -4,12 +4,14 @@
 \alias{vb}
 \title{von Bertalanffy growth function}
 \usage{
-vb(age, ps)
+vb(age, ps, setorigin = FALSE)
 }
 \arguments{
 \item{age}{numerical age}
 
 \item{ps}{vectorized parameters in order of c(Linf, K, t0)}
+
+\item{setorigin}{constrain t_0 to 0 when TRUE}
 }
 \value{
 numerical or vector
@@ -19,6 +21,6 @@ von Bertalanffy growth function
 }
 \examples{
 \dontrun{
-vb(1, c(300, 0.6, 0))
+vb(1, c(300, 0.6, 0), setorigin = FALSE)
 }
 }

@@ -4,12 +4,14 @@
 \alias{ext_vb}
 \title{extended von Bertalanffy growth function}
 \usage{
-ext_vb(age, ps)
+ext_vb(age, ps, setorigin = FALSE)
 }
 \arguments{
 \item{age}{numerical age}
 
 \item{ps}{vectorized parameters in order of c(Linf, K1, K2, tm, t0)}
+
+\item{setorigin}{constrain t_0 to 0 when TRUE}
 }
 \value{
 numerical or vector
