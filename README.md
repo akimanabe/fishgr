@@ -1,6 +1,6 @@
 # fishgr
 
-[![Build Status](https://travis-ci.org/akimanabe/fishgr.svg?branch=master)](https://travis-ci.org/akimanabe/fishgr)
+[![R-CMD-check](https://github.com/akimanabe/fishgr/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/akimanabe/fishgr/actions/workflows/R-CMD-check.yaml)
 [![codecov](https://codecov.io/gh/akimanabe/fishgr/branch/master/graph/badge.svg)](https://codecov.io/gh/akimanabe/fishgr)
 
 Package to practice TravisCI and other CI/CD tools as well as to develop model-fitting functions for growth models for fish.
