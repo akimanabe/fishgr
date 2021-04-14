@@ -7,5 +7,6 @@ Package to practice TravisCI and other CI/CD tools as well as to develop model-f
 
 | Version | Description |
 | ------- | ----------- |
+| 0.0.0.9005 | Fix bug on extended-VB [Issue #33](https://github.com/akimanabe/fishgr/issues/33)|
 | 0.0.0.9004 | Introduce setorigin option to constrain t_0 as 0 when fitting |
 | 0.0.0.9003 | Add fit_vb and fit_ext_vb |
